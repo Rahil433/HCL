@@ -1,419 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTrace Verified | Batch #BATCH-2026-KA09</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Google Font: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Load Phosphor Icons for clean agricultural & supply chain iconography -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        emerald: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>AgriTrace: fresh produce from verified farms</title>
+<meta name="description" content="Buy fruits and vegetables by the kilo straight from farmers. Track every delivery.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3faf0;--card:#fff;--ink:#16261c;--mut:#56655b;--line:#d1e8ca;--brand:#1a8f3c;--deep:#0b5d2a;--soft:#c9ecc0;--on:#fff;--gold:#f5b800;--ok:#157a45;--bad:#b3261e;--tint:#e2f5da;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1712;--card:#16231b;--ink:#e8f1e6;--mut:#9fb2a5;--line:#2a3b2f;--brand:#5ad07a;--on:#08231a;--ok:#5fd68f;--bad:#ff8a80;--tint:#1c2c22;--soft:#1f3a28;--deep:#8be3a1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1712;--card:#16231b;--ink:#e8f1e6;--mut:#9fb2a5;--line:#2a3b2f;--brand:#5ad07a;--on:#08231a;--ok:#5fd68f;--bad:#ff8a80;--tint:#1c2c22;--soft:#1f3a28;--deep:#8be3a1;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Source Sans 3",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .5rem}h1{font-size:clamp(1.6rem,5vw,2.3rem)}h2{font-size:1.3rem;margin-top:1rem}h3{font-size:1.05rem}p{margin:.3rem 0 .8rem}a{color:var(--brand)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:linear-gradient(180deg,var(--soft),var(--bg));border-bottom:1px solid var(--line)}
+.bar{max-width:900px;margin:auto;display:flex;align-items:center;gap:.5rem;padding:.55rem 1rem}
+.logo{font:700 1.15rem "Bricolage Grotesque",sans-serif;color:var(--brand);text-decoration:none;white-space:nowrap}
+.loc{flex:1;min-width:0;text-decoration:none;color:var(--ink);display:block}.loc b{display:block;font:700 1.1rem "Bricolage Grotesque",sans-serif}.loc span{display:block;color:var(--mut);font-size:.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+main{max-width:900px;margin:auto;padding:1rem 1rem calc(8rem + env(safe-area-inset-bottom,0px))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem;margin:0 0 .9rem}
+.btn{appearance:none;border:0;background:var(--brand);color:var(--on);font:600 1rem inherit;font-family:inherit;padding:.6rem 1.05rem;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.sm{padding:.3rem .7rem;font-size:.9rem}.btn.red{background:var(--bad);color:#fff}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:.55rem .8rem;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+label{font-weight:600;display:block;margin:.4rem 0 .25rem}
+.search{width:100%;border-radius:99px;padding:.7rem 1.1rem;margin-bottom:.7rem}
+.promo{background:linear-gradient(135deg,var(--deep),var(--brand));color:var(--on);border-radius:18px;padding:1.1rem 1.2rem;margin-bottom:.9rem}.promo p{margin:0;opacity:.92}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}@media(min-width:560px){.grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:.6rem;display:flex;flex-direction:column;gap:.2rem}
+.tile{position:relative;border:0;background:var(--tint);border-radius:10px;font-size:4rem;height:auto;aspect-ratio:1/1;display:grid;place-items:center;cursor:pointer;margin-bottom:.3rem;overflow:hidden;padding:0}.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:.4rem;bottom:.3rem;font:600 .7rem "Source Sans 3",sans-serif;font-style:normal;background:var(--card);color:var(--ok);border-radius:6px;padding:0 .35rem}
+.pc small,.note{color:var(--mut)}.note{font-size:.88rem}
+.pb{display:flex;justify-content:space-between;align-items:center;margin-top:.3rem;font-weight:700}
+.add{border:1.5px solid var(--brand);background:var(--soft);color:var(--brand);font:700 .9rem inherit;font-family:inherit;border-radius:8px;padding:.3rem 1.1rem;cursor:pointer}
+.stp{display:flex;align-items:center;gap:.5rem;background:var(--brand);color:var(--on);border-radius:8px;padding:0 .2rem}.stp button{background:none;border:0;color:inherit;font-size:1.2rem;cursor:pointer;padding:.1rem .5rem}
+#cb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 4.2rem);width:min(92%,560px);z-index:12;display:none}
+#cb a{display:flex;justify-content:space-between;background:var(--brand);color:var(--on);text-decoration:none;font-weight:700;padding:.8rem 1rem;border-radius:14px;box-shadow:0 6px 18px #0004}
+#tabs{position:fixed;left:0;right:0;bottom:0;z-index:12;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0px)}
+#tabs a{flex:1;max-width:160px;text-align:center;padding:.45rem 0;text-decoration:none;color:var(--mut);font-size:.8rem;font-weight:600}#tabs a span{display:block;font-size:1.3rem}#tabs a.on{color:var(--brand)}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.6rem 0}.roles button{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .3rem;color:var(--ink);font:600 .9rem inherit;font-family:inherit;cursor:pointer}.roles button span{display:block;font-size:1.7rem}.roles .on{border-color:var(--brand);background:var(--tint)}
+.otp{display:flex;gap:.45rem}.otp input{width:2.7rem;height:3.1rem;text-align:center;font-size:1.35rem;padding:0}
+.demo{background:var(--tint);border-left:4px solid var(--gold);padding:.6rem .9rem;border-radius:8px;margin:.8rem 0}.err{color:var(--bad);min-height:1.3rem;margin:.3rem 0}
+.tl{margin:.8rem 0 0 .5rem;padding-left:1.4rem;border-left:3px solid var(--brand)}.st{position:relative;margin-bottom:1rem}.st::before{content:"";position:absolute;left:calc(-1.4rem - 9px);top:.3rem;width:15px;height:15px;border-radius:50%;background:var(--line);border:3px solid var(--bg)}.st.d::before{background:var(--gold)}.st small{color:var(--mut)}
+table{width:100%;border-collapse:collapse}td,th{padding:.45rem .3rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:500;width:44%}
+.hash{font:.82rem ui-monospace,Menlo,monospace;word-break:break-all;background:var(--tint);padding:.5rem;border-radius:8px}.pass{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}
+.badge{display:inline-block;background:var(--tint);color:var(--brand);border-radius:99px;padding:.1rem .7rem;font-weight:700;font-size:.85rem}
+.map{width:100%;background:var(--tint);border-radius:12px;margin:.6rem 0}.line{display:flex;justify-content:space-between;gap:.5rem;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--line)}
+.big{width:100%;max-height:320px;object-fit:contain;background:var(--tint);border-radius:12px;display:block;margin-bottom:.6rem}.thumb{width:56px;height:56px;border-radius:10px;object-fit:cover;background:var(--tint)}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 8rem);transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.55rem 1rem;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20;max-width:90%}#toast.s{opacity:1}
+@media print{header,#tabs,#cb,#toast,.np{display:none!important}body{background:#fff;color:#000}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.cats{display:flex;gap:.5rem;overflow-x:auto;padding:.2rem 0 .8rem}.cats button{flex:0 0 auto;width:74px;background:none;border:0;color:var(--ink);font:600 .8rem inherit;font-family:inherit;cursor:pointer;padding:0}.cats span{display:grid;place-items:center;width:62px;height:62px;margin:0 auto .25rem;border-radius:18px;background:var(--tint);font-size:1.9rem;border:2px solid transparent}.cats .on span{border-color:var(--brand)}.cats .on{color:var(--brand)}
+.pn{font-size:1rem;line-height:1.2}.wsel{width:100%;padding:.3rem .5rem;border-radius:8px;font-size:.9rem;font-weight:600}.pb small{font-weight:400}.gate{text-align:center;padding:2rem 1rem}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:18px;aspect-ratio:1/1;display:grid;place-items:center;font-size:7rem;overflow:hidden;position:relative;max-width:420px;margin:auto}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.eta{display:inline-block;background:var(--soft);color:var(--deep);font-weight:700;font-size:.8rem;border-radius:6px;padding:.1rem .5rem}
+.wchips{display:flex;gap:.5rem;margin:.6rem 0}.wchips button{flex:1;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:.5rem .2rem;font:600 .85rem inherit;font-family:inherit;color:var(--ink);cursor:pointer}.wchips b{display:block;font-size:1rem}.wchips .on{border-color:var(--brand);background:var(--tint)}
+.pbar{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 3.7rem);z-index:12;background:var(--card);border-top:1px solid var(--line);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.cm{display:flex;flex-direction:column;gap:.4rem;height:48vh;overflow-y:auto;padding:.6rem;background:var(--tint);border-radius:14px;margin-bottom:.5rem}.b{max-width:80%;padding:.45rem .75rem;border-radius:14px;background:var(--card);align-self:flex-start}.b.me{align-self:flex-end;background:var(--brand);color:var(--on)}.b small{display:block;opacity:.7;font-size:.72rem}
+.qr{display:flex;gap:.4rem;overflow-x:auto;margin:.4rem 0}.qr button{white-space:nowrap;border:1.5px solid var(--brand);background:var(--card);color:var(--brand);border-radius:99px;padding:.3rem .8rem;font:600 .85rem inherit;font-family:inherit;cursor:pointer}
+.tips{border-left:4px solid var(--brand);background:var(--tint)}.tips ul{margin:.4rem 0 0;padding-left:1.2rem}.tips li{margin:.25rem 0}
+</style>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+<body>
+<header><div class="bar"><a class="loc" id="lp" href="#location"><b id="lt">⚡ Fresh produce</b><span id="la">Set your location</span></a><button class="btn alt sm" id="th" aria-label="Switch light or dark theme">◐</button></div></header>
+<main id="app"></main><div id="cb"></div><nav id="tabs" aria-label="Main"></nav><div id="toast" role="status"></div>
 
-    <!-- Mobile-First App Container -->
-    <div class="max-w-md mx-auto min-h-screen bg-slate-50 shadow-xl border-x border-slate-200/80 flex flex-col justify-between pb-8">
-        
-        <!-- Top Brand Bar -->
-        <div>
-            <header class="bg-gradient-to-br from-emerald-800 via-emerald-700 to-teal-800 text-white px-5 pt-6 pb-8 rounded-b-3xl shadow-md relative overflow-hidden">
-                <!-- Subtle decorative background circle -->
-                <div class="absolute -right-8 -top-8 w-36 h-36 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
-                
-                <!-- Brand & Verification Pill -->
-                <div class="flex items-center justify-between mb-5 relative z-10">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
-                            <i class="ph-fill ph-plant text-emerald-200 text-lg"></i>
-                        </div>
-                        <div>
-                            <span class="font-bold tracking-tight text-sm block leading-none">AgriTrace</span>
-                            <span class="text-[10px] text-emerald-200 uppercase tracking-widest font-semibold">Farm-to-Shelf</span>
-                        </div>
-                    </div>
-                    <div class="inline-flex items-center gap-1.5 bg-emerald-950/60 border border-emerald-400/40 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-emerald-100 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Verified Fresh
-                    </div>
-                </div>
-
-                <!-- Product Title & Batch ID -->
-                <div class="flex items-center gap-4 relative z-10">
-                    <!-- Custom SVG Produce Badge -->
-                    <div class="w-16 h-16 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center shrink-0 shadow-inner">
-                        <svg class="w-10 h-10" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Stem -->
-                            <path d="M32 16C32 11 35 7 39 6" stroke="#A7F3D0" stroke-width="4" stroke-linecap="round"/>
-                            <!-- Capsicum Body -->
-                            <path d="M21 19C14 19 11 26 12 37C13 48 18 54 24 54C27 54 29 52 32 52C35 52 37 54 40 54C46 54 51 48 52 37C53 26 50 19 43 19C39 19 36 21 32 21C28 21 25 19 21 19Z" fill="#34D399"/>
-                            <path d="M26 20C23 26 23 43 26 52" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M38 20C41 26 41 43 38 52" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
-                            <!-- Highlight -->
-                            <path d="M17 26C16.5 30 16.5 35 17.5 39" stroke="#D1FAE5" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="inline-flex items-center gap-1 text-[11px] font-mono bg-white/15 text-emerald-100 px-2 py-0.5 rounded-md mb-1 border border-white/10">
-                            <i class="ph ph-qr-code text-xs"></i>
-                            <span>#BATCH-2026-KA09</span>
-                        </div>
-                        <h1 class="text-lg font-extrabold leading-snug text-white">Organic Green Bell Peppers</h1>
-                        <p class="text-xs text-emerald-100/90 font-medium">Capsicum • Grade A Export Quality</p>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Main Content Area -->
-            <main class="px-4 -mt-4 space-y-4 relative z-20">
-                
-                <!-- 2. Freshness Score Card -->
-                <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80">
-                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Real-Time Quality Index</span>
-                            <div class="flex items-baseline gap-1.5 mt-0.5">
-                                <span class="text-3xl font-extrabold text-emerald-600">96</span>
-                                <span class="text-sm font-bold text-slate-400">/ 100</span>
-                                <span class="ml-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">Freshness Score</span>
-                            </div>
-                        </div>
-                        <!-- Circular Score Ring -->
-                        <div class="relative w-14 h-14 flex items-center justify-center">
-                            <svg class="w-14 h-14 -rotate-90" viewBox="0 0 36 36">
-                                <path class="text-slate-100" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="text-emerald-500" stroke-dasharray="96, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <i class="ph-fill ph-seal-check text-emerald-600 text-xl absolute"></i>
-                        </div>
-                    </div>
-
-                    <!-- Quick Metrics Grid -->
-                    <div class="grid grid-cols-3 gap-2 pt-3.5 text-center">
-                        <div class="bg-slate-50 rounded-xl p-2 border border-slate-100">
-                            <i class="ph-fill ph-clock-countdown text-emerald-600 text-lg mb-0.5 block"></i>
-                            <span class="text-[11px] font-bold text-slate-800 block leading-tight">18 Hrs Ago</span>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">Harvested</span>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-2 border border-slate-100">
-                            <i class="ph-fill ph-thermometer-cold text-sky-600 text-lg mb-0.5 block"></i>
-                            <span class="text-[11px] font-bold text-slate-800 block leading-tight">8°C Optimal</span>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">Cold-Chain</span>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-2 border border-slate-100">
-                            <i class="ph-fill ph-leaf text-emerald-600 text-lg mb-0.5 block"></i>
-                            <span class="text-[11px] font-bold text-slate-800 block leading-tight">100% Free</span>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">No Pesticides</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 3. Supply Chain Journey Timeline -->
-                <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-2">
-                            <i class="ph-fill ph-path text-emerald-600 text-lg"></i>
-                            <h2 class="text-sm font-bold text-slate-800">Supply Chain Journey</h2>
-                        </div>
-                        <span class="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">3 Verified Checkpoints</span>
-                    </div>
-
-                    <!-- Vertical Timeline -->
-                    <div class="relative pl-6 space-y-5 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-emerald-500 before:via-emerald-400 before:to-teal-500">
-                        
-                        <!-- Stage 1: Farm Gate -->
-                        <div class="relative">
-                            <span class="absolute -left-6 top-0.5 w-6 h-6 rounded-full bg-emerald-100 border-2 border-emerald-600 flex items-center justify-center text-emerald-700 shadow-xs">
-                                <i class="ph-fill ph-barn text-xs"></i>
-                            </span>
-                            <div class="bg-slate-50/90 hover:bg-emerald-50/40 transition-colors rounded-xl p-3 border border-slate-200/70">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-md">Stage 1 • Farm Gate</span>
-                                    <span class="text-[11px] font-medium text-slate-500">Nov 25, 04:15 AM</span>
-                                </div>
-                                <h3 class="text-sm font-bold text-slate-900">Ramesh Gowda • Hunsur Farms</h3>
-                                <p class="text-xs text-slate-500 mb-2 flex items-center gap-1">
-                                    <i class="ph-fill ph-map-pin text-emerald-600"></i> Mysuru District, Karnataka
-                                </p>
-                                <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-slate-200/60">
-                                    <span class="inline-flex items-center gap-1 text-[11px] font-medium text-slate-700 bg-white px-2 py-0.5 rounded-md border border-slate-200/80">
-                                        <i class="ph-fill ph-drop text-sky-500"></i> Drip-Irrigated
-                                    </span>
-                                    <span class="inline-flex items-center gap-1 text-[11px] font-medium text-slate-700 bg-white px-2 py-0.5 rounded-md border border-slate-200/80">
-                                        <i class="ph-fill ph-shield-check text-emerald-600"></i> Zero Synthetic Pesticides
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stage 2: Mandi / Aggregator Hub -->
-                        <div class="relative">
-                            <span class="absolute -left-6 top-0.5 w-6 h-6 rounded-full bg-emerald-100 border-2 border-emerald-600 flex items-center justify-center text-emerald-700 shadow-xs">
-                                <i class="ph-fill ph-scales text-xs"></i>
-                            </span>
-                            <div class="bg-slate-50/90 hover:bg-emerald-50/40 transition-colors rounded-xl p-3 border border-slate-200/70">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider text-teal-700 bg-teal-100/80 px-2 py-0.5 rounded-md">Stage 2 • Agri-Mandi Hub</span>
-                                    <span class="text-[11px] font-medium text-slate-500">Nov 25, 09:30 AM</span>
-                                </div>
-                                <h3 class="text-sm font-bold text-slate-900">Mysuru Central Agri-Mandi</h3>
-                                <p class="text-xs text-slate-500 mb-2">Automated Optical Sorting & Digital Weighing</p>
-                                <div class="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-slate-200/60 text-[11px]">
-                                    <div class="bg-white px-2 py-1 rounded-md border border-slate-200/80 font-medium text-slate-700">
-                                        <span class="text-slate-400 block text-[10px]">Batch Weight</span>
-                                        Grade A • 25 kg Crate
-                                    </div>
-                                    <div class="bg-white px-2 py-1 rounded-md border border-slate-200/80 font-medium text-emerald-700 flex items-center gap-1">
-                                        <i class="ph-fill ph-check-circle text-emerald-600 text-sm shrink-0"></i>
-                                        <span>Quality Inspection Passed</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stage 3: Retail Store Shelf -->
-                        <div class="relative">
-                            <span class="absolute -left-6 top-0.5 w-6 h-6 rounded-full bg-emerald-600 border-2 border-emerald-200 flex items-center justify-center text-white shadow-sm">
-                                <i class="ph-fill ph-storefront text-xs"></i>
-                            </span>
-                            <div class="bg-emerald-50/50 rounded-xl p-3 border border-emerald-200/80">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-emerald-600 px-2 py-0.5 rounded-md">Stage 3 • Retail Shelf</span>
-                                    <span class="text-[11px] font-medium text-slate-600">Nov 25, 02:10 PM</span>
-                                </div>
-                                <h3 class="text-sm font-bold text-slate-900">FreshMart Express, Mysuru</h3>
-                                <p class="text-xs text-slate-600 mb-2">Smart Chiller Display • Aisle 2 (Organic Produce)</p>
-                                <div class="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-emerald-200/60 text-[11px]">
-                                    <div class="bg-white px-2 py-1 rounded-md border border-emerald-100 font-semibold text-sky-700 flex items-center gap-1">
-                                        <i class="ph-fill ph-thermometer text-sky-500 text-sm"></i>
-                                        <span>Current: 8.2°C</span>
-                                    </div>
-                                    <div class="bg-white px-2 py-1 rounded-md border border-emerald-100 font-semibold text-slate-800 flex items-center gap-1">
-                                        <i class="ph-fill ph-calendar-check text-emerald-600 text-sm"></i>
-                                        <span>Best Before: Nov 30</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- 4. Consumer Trust & Interactive Feedback Card -->
-                <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80 space-y-4">
-                    
-                    <!-- Interactive Rating Widget -->
-                    <div>
-                        <div class="flex items-center justify-between mb-1.5">
-                            <span class="text-xs font-bold text-slate-800">Rate This Produce</span>
-                            <span id="ratingStatus" class="text-[11px] font-medium text-slate-400">Tap a star to verify</span>
-                        </div>
-                        <div class="flex items-center justify-between bg-slate-50 px-3 py-2 rounded-xl border border-slate-200/70">
-                            <div class="flex items-center gap-1.5" id="starContainer">
-                                <button type="button" onclick="rateProduce(1)" class="star-btn p-1 text-slate-300 hover:text-amber-400 transition-transform active:scale-90" aria-label="Rate 1 star">
-                                    <i class="ph-fill ph-star text-2xl"></i>
-                                </button>
-                                <button type="button" onclick="rateProduce(2)" class="star-btn p-1 text-slate-300 hover:text-amber-400 transition-transform active:scale-90" aria-label="Rate 2 stars">
-                                    <i class="ph-fill ph-star text-2xl"></i>
-                                </button>
-                                <button type="button" onclick="rateProduce(3)" class="star-btn p-1 text-slate-300 hover:text-amber-400 transition-transform active:scale-90" aria-label="Rate 3 stars">
-                                    <i class="ph-fill ph-star text-2xl"></i>
-                                </button>
-                                <button type="button" onclick="rateProduce(4)" class="star-btn p-1 text-slate-300 hover:text-amber-400 transition-transform active:scale-90" aria-label="Rate 4 stars">
-                                    <i class="ph-fill ph-star text-2xl"></i>
-                                </button>
-                                <button type="button" onclick="rateProduce(5)" class="star-btn p-1 text-slate-300 hover:text-amber-400 transition-transform active:scale-90" aria-label="Rate 5 stars">
-                                    <i class="ph-fill ph-star text-2xl"></i>
-                                </button>
-                            </div>
-                            <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">Farmer Direct</span>
-                        </div>
-                    </div>
-
-                    <!-- Download Quality Certificate Button -->
-                    <button type="button" onclick="openCertificateModal()" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold text-sm rounded-xl shadow-sm shadow-emerald-600/20 flex items-center justify-center gap-2 transition-all active:scale-[0.99]">
-                        <i class="ph-bold ph-file-arrow-down text-lg"></i>
-                        <span>Download Quality Certificate</span>
-                    </button>
-
-                    <!-- Tamper-Proof Hash Footer -->
-                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-                        <div class="flex items-center gap-1.5 truncate">
-                            <i class="ph-fill ph-lock-key text-emerald-600 text-sm shrink-0"></i>
-                            <span class="font-mono truncate">Ledger Hash: 0x9f4c...82e1a4</span>
-                        </div>
-                        <button type="button" onclick="copyHash()" class="text-emerald-700 font-semibold hover:underline shrink-0 ml-2 px-1.5 py-0.5 rounded hover:bg-emerald-50">
-                            Copy ID
-                        </button>
-                    </div>
-                </section>
-
-            </main>
-        </div>
-
-        <!-- Subtle App Footer -->
-        <footer class="text-center px-4 pt-6 text-[11px] text-slate-400">
-            <p class="font-medium text-slate-500">Powered by AgriTrace Smart Supply Chain</p>
-            <p class="mt-0.5">Immutable Farm-to-Fork Traceability Ledger</p>
-        </footer>
-    </div>
-
-    <!-- Quality Certificate Modal (Hidden by default) -->
-    <div id="certModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4">
-        <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-200 transform transition-all">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                        <i class="ph-fill ph-certificate text-xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-slate-900">Lab & Quality Certificate</h3>
-                        <p class="text-[11px] text-slate-500">Batch #BATCH-2026-KA09</p>
-                    </div>
-                </div>
-                <button type="button" onclick="closeCertificateModal()" class="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100">
-                    <i class="ph-bold ph-x text-base"></i>
-                </button>
-            </div>
-
-            <div class="py-4 space-y-2.5 text-xs">
-                <div class="flex justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-500">Residue Test (NPOP)</span>
-                    <span class="font-bold text-emerald-700">PASSED (0.00 ppm)</span>
-                </div>
-                <div class="flex justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-500">Moisture & Crispness</span>
-                    <span class="font-bold text-slate-800">94.8% Optimal</span>
-                </div>
-                <div class="flex justify-between py-1.5 border-b border-slate-100">
-                    <span class="text-slate-500">Cold-Chain Compliance</span>
-                    <span class="font-bold text-slate-800">100% (7.8°C – 8.4°C)</span>
-                </div>
-                <div class="flex justify-between py-1.5">
-                    <span class="text-slate-500">Certified By</span>
-                    <span class="font-bold text-slate-800">Mysuru Agri-Quality Lab</span>
-                </div>
-            </div>
-
-            <div class="bg-emerald-50 border border-emerald-200/70 rounded-xl p-2.5 mb-4 flex items-center gap-2 text-[11px] text-emerald-800">
-                <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
-                <span>Digital Certificate PDF saved to your device.</span>
-            </div>
-
-            <button type="button" onclick="closeCertificateModal()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs rounded-xl transition-colors">
-                Done
-            </button>
-        </div>
-    </div>
-
-    <!-- Toast Notification Banner -->
-    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 bg-slate-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg border border-slate-700">
-        <i class="ph-fill ph-check-circle text-emerald-400 text-base"></i>
-        <span id="toastMessage">Action completed</span>
-    </div>
-
-    <script>
-        /**
-         * Interactive Star Rating Handler for Demo Pitch
-         * Updates star colors and displays instant consumer feedback confirmation.
-         */
-        function rateProduce(stars) {
-            const buttons = document.querySelectorAll('.star-btn');
-            const statusText = document.getElementById('ratingStatus');
-            
-            buttons.forEach((btn, index) => {
-                if (index < stars) {
-                    btn.classList.remove('text-slate-300');
-                    btn.classList.add('text-amber-400');
-                } else {
-                    btn.classList.remove('text-amber-400');
-                    btn.classList.add('text-slate-300');
-                }
-            });
-
-            statusText.textContent = `Rated ${stars}/5 • Sent to Farmer!`;
-            statusText.classList.remove('text-slate-400');
-            statusText.classList.add('text-emerald-600', 'font-semibold');
-            
-            showToast(`Thanks! ${stars}-star freshness rating logged.`);
-        }
-
-        /**
-         * Opens the Quality Certificate verification modal
-         */
-        function openCertificateModal() {
-            const modal = document.getElementById('certModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        /**
-         * Closes the Quality Certificate verification modal
-         */
-        function closeCertificateModal() {
-            const modal = document.getElementById('certModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        /**
-         * Copies the tamper-proof blockchain/ledger hash using iFrame-safe execCommand
-         */
-        function copyHash() {
-            const fullHash = "0x9f4c7b2a19d84e305c6f1a2b82e1a4";
-            const tempInput = document.createElement("input");
-            tempInput.value = fullHash;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            showToast("Ledger Verification Hash copied!");
-        }
-
-        /**
-         * Displays a clean floating toast message
-         */
-        let toastTimeout;
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMessage');
-            
-            toastMsg.textContent = message;
-            toast.classList.remove('hidden');
-            toast.classList.add('flex');
-
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.add('hidden');
-                toast.classList.remove('flex');
-            }, 2800);
-        }
-    </script>
+<script>
+const $=s=>document.querySelector(s),app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mk=st=>({get(k,d){try{const v=st.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{st.setItem(k,JSON.stringify(v));return true}catch(e){return false}},del(k){try{st.removeItem(k)}catch(e){}}});
+const ls=mk(localStorage),ss=mk(sessionStorage);
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(x=>x.toString(16).padStart(2,'0')).join('');
+const FM=[['Ramesh Gowda','Hunsur Farms','Mysuru'],['Lakshmi Devi','Kolar Green Acres','Kolar'],['Manjunath K','Mullayanagiri Terrace Farm','Chikkamagaluru'],['Savitha Naik','Sirsi Orchards','Uttara Kannada'],['Abdul Rahman','Kodagu Fields','Kodagu'],['Geeta Patil','Belagavi Farms','Belagavi']];
+const SD=[['Bell peppers','🫑','Vegetables',120,0],['Tomatoes','🍅','Vegetables',64,1],['Carrots','🥕','Vegetables',76,2],['Potatoes','🥔','Vegetables',30,5],['Onions','🧅','Vegetables',36,5],['Broccoli','🥦','Vegetables',110,2],['Brinjal','🍆','Vegetables',68,1],['Cucumber','🥒','Vegetables',56,0],['Sweet corn','🌽','Vegetables',60,5],['Green chilli','🌶️','Vegetables',180,4],['Garlic','🧄','Vegetables',240,3],['Spinach','🥬','Leafy & herbs',50,0],['Coriander','🌿','Leafy & herbs',120,1],['Bananas','🍌','Fruits',60,4],['Oranges','🍊','Fruits',140,4],['Grapes','🍇','Fruits',170,1],['Watermelon','🍉','Fruits',25,5],['Pineapple','🍍','Fruits',55,3],['Lemon','🍋','Fruits',100,3],['Coconut','🥥','Fruits',50,3],['Apples','🍎','Fruits',180,2]].map((a,i)=>({id:'s'+(i+1),n:a[0],e:a[1],c:a[2],pk:a[3],st:15+(i*7)%30,farmer:FM[a[4]][0],farm:FM[a[4]][1],dist:FM[a[4]][2],o:''}));
+const ovr=()=>ls.get('ovr',{}),cp=()=>ls.get('cp',[]);
+const all=()=>[...SD.map(p=>({...p,...(ovr()[p.id]||{})})),...cp()];const gp=id=>all().find(p=>p.id===id);
+const okImg=s=>/^data:image\/(png|jpe?g|webp|gif);base64,[A-Za-z0-9+\/=]+$/.test(s||'');
+const vis=p=>okImg(p.img)?`<img src="${p.img}" alt="${esc(p.n)}">`:(p.e||'🌱');
+const bt=p=>{const L=p.c==='Leafy & herbs',F=p.c==='Fruits',sd=p.id[0]==='s',n=+p.id.slice(1),t=sd?Date.parse('2026-11-25T04:30:00+05:30')+n*18e5:p.t;return{id:'BATCH-2026-'+p.id.toUpperCase(),product:p.n,farmer:p.farmer,farm:p.farm,dist:p.dist,harvest:t,mandi:t+189e5,retail:t+36e6,best:t+(L?2:F?7:5)*864e5,temp:L?4.5:F?10.1:8.2,firm:sd?90+(n*37%80)/10:null,lab:sd?p.dist+' Agri-Quality Lab':null,sd}};
+const fmt=d=>new Date(d).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit'});
+const fresh=b=>Math.max(40,Math.round(99-(Date.now()-b.harvest)/36e5*.12));
+const inr=n=>'₹'+n,wl=g=>g>=1000?g/1000+' kg':g+' g',price=(p,g)=>Math.round(p.pk*g/1000);
+const HUBS=[['Mysuru',12.2958,76.6394],['Bengaluru',12.9716,77.5946],['Mangaluru',12.9141,74.856],['Hubballi',15.3647,75.124]];
+const dist=(a,b,c,d)=>{const r=x=>x*Math.PI/180,h=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return 12742*Math.asin(Math.sqrt(h))};
+const hasC=p=>p&&p.lat!=null&&p.lng!=null;
+const near=l=>{let b={h:'Mysuru',km:0,lat:12.2958,lng:76.6394};if(!hasC(l))return b;b.km=1e9;HUBS.forEach(h=>{const k=dist(h[1],h[2],l.lat,l.lng);if(k<b.km)b={h:h[0],km:k,lat:h[1],lng:h[2]}});return b};
+const kmOf=(a,b)=>hasC(a)&&hasC(b)?dist(a.lat,a.lng,b.lat,b.lng):3;
+const RADIUS=25,eta=k=>Math.round(8+k*3.5);
+const CITIES=[['Mysuru',12.2958,76.6394],['Bengaluru',12.9716,77.5946],['Mangaluru',12.9141,74.856],['Hubballi',15.3647,75.124],['Kolar',13.1357,78.1294],['Chikkamagaluru',13.3161,75.772],['Madikeri',12.4244,75.7382],['Belagavi',15.8497,74.4977],['Sirsi',14.6197,74.8354],['Udupi',13.3409,74.7421]];
+const uloc=()=>{const s=sess(),d=s?defA():null;return d&&hasC(d)?d:ls.get('gloc',null)};
+const pkm=(p,u)=>{if(!u)return null;if(p.id[0]==='s')return near(u).km;const f=defA(p.o+':farmer');return hasC(f)?dist(f.lat,f.lng,u.lat,u.lng):null};
+const nearby=()=>{const u=uloc();return u?all().map(p=>({...p,km:pkm(p,u)})).filter(p=>p.km!=null&&p.km<=RADIUS):[]};
+const sess=()=>{const s=ss.get('sess',null);if(!s||Date.now()>s.exp){if(s)ss.del('sess');return null}return s};
+const key=()=>{const s=sess();return s?s.phone+':'+s.role:''};
+const prof=()=>ls.get('prof',{})[key()]||{};const setProf=o=>{const m=ls.get('prof',{});m[key()]={...(m[key()]||{}),...o};return ls.set('prof',m)};
+const abOf=k=>ls.get('ab',{})[k]||[];const ab=()=>abOf(key());const setAb=a=>{const m=ls.get('ab',{});m[key()]=a;return ls.set('ab',m)};const defA=k=>{const a=abOf(k||key());return a.find(x=>x.d)||a[0]||null};
+const nm=x=>Number(x).toFixed(6);
+const ml=(a,b)=>hasC(a)&&hasC(b)?`<a class="btn alt sm" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${nm(a.lat)}%2C${nm(a.lng)}%3B${nm(b.lat)}%2C${nm(b.lng)}">Open route in OpenStreetMap</a> <a class="btn alt sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&origin=${nm(a.lat)},${nm(a.lng)}&destination=${nm(b.lat)},${nm(b.lng)}">Google Maps</a>`:'';
+const pt=a=>hasC(a)?`<a target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=${nm(a.lat)}&mlon=${nm(a.lng)}#map=17/${nm(a.lat)}/${nm(a.lng)}">View on map</a>`:'';
+function mapSVG(pts){const v=pts.filter(hasC);if(!hasC(pts[0])||!hasC(pts[1]))return '<p class="note">Add GPS to both addresses to see the route plot.</p>';const k=Math.cos(v[0].lat*Math.PI/180),xs=v.map(p=>p.lng*k),ys=v.map(p=>-p.lat),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),sc=Math.min(240/Math.max(x1-x0,.002),110/Math.max(y1-y0,.002)),X=p=>160+(p.lng*k-(x0+x1)/2)*sc,Y=p=>100+(-p.lat-(y0+y1)/2)*sc,a=pts[0],b=pts[1];
+return `<svg class="map" viewBox="0 0 320 200" role="img" aria-label="Route plot from pickup to drop"><path d="M0 50H320M0 100H320M0 150H320M80 0V200M160 0V200M240 0V200" stroke="var(--line)"/><line x1="${X(a)}" y1="${Y(a)}" x2="${X(b)}" y2="${Y(b)}" stroke="var(--brand)" stroke-width="3" stroke-dasharray="6 6"/>${pts.map((p,i)=>hasC(p)?`<text x="${X(p)}" y="${Y(p)+7}" font-size="24" text-anchor="middle">${['🌾','🏠','🛵'][i]}</text>`:'').join('')}</svg><p class="note">Plot uses real coordinates. Open the full street map with the buttons below.</p>`}
+let cart=ls.get('cart',{}),sel={},q='',cat='All',ret='account',trk='',tt,tm,pl,wid=null,AD=null,NP={img:''},cur='home';
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('s');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('s'),3000)}
+async function saveO(a){let p='0';for(const o of a){delete o.h;o.h=await sha(JSON.stringify(o)+p);p=o.h}return ls.set('orders',a)}
+async function loadO(){const a=ls.get('orders',[]);let p='0',bad=0;const ok=[];for(const o of a){const h=o.h,c={...o};delete c.h;if(await sha(JSON.stringify(c)+p)===h){o.pk=o.pk||{text:o.hub?o.hub+' farm hub':'Pickup point',lat:null,lng:null};o.dr=o.dr||{text:o.ad||'Your address',lat:null,lng:null};o.bn=o.bn||'';o.rn=o.rn||'';o.rd=o.rd||'';o.rl=o.rl||null;o.km=o.km||3;o.tm=o.tm||{};o.it=o.it||[];ok.push(o)}else bad++;p=h}return{ok,bad}}
+const ST=['placed','packed','picked','way','delivered'],SL={placed:'Order placed',packed:'Packed and ready',picked:'Rider picked it up',way:'Out for delivery',delivered:'Delivered'};
+const parts=k=>k.split('|'),sub=()=>Object.entries(cart).reduce((s,[k,n])=>{const [i,g]=parts(k),p=gp(i);return p?s+price(p,+g)*n:s},0),cnt=()=>Object.values(cart).reduce((s,n)=>s+n,0);
+const kgIn=(id,ex)=>Object.entries(cart).reduce((s,[k,n])=>{const [i,g]=parts(k);return i===id&&k!==ex?s+n*g/1000:s},0);
+function setQ(k,n){const [id,g]=parts(k),p=gp(id);if(!p)return;n=Math.max(0,Math.min(10,Math.floor((p.st-kgIn(id,k))*1000/g+1e-9),n));if(n)cart[k]=n;else delete cart[k];ls.set('cart',cart);drawGrid();bar();if(cur==='cart')route(1);else if(cur==='trace')route(1)}
+function bar(){const c=$('#cb'),n=cnt();c.style.display=n&&!['cart','trace','chat'].includes(cur)?'block':'none';c.innerHTML=`<a href="#cart"><span>${n} item${n>1?'s':''}</span><span>View cart ${inr(sub())}</span></a>`}
+const card=p=>{const w=sel[p.id]||500,k=p.id+'|'+w,n=cart[k]||0;return `<div class="pc"><button class="tile" data-a="trace" data-id="${p.id}" aria-label="${esc(p.n)} details">${vis(p)}<i class="tag">⚡ ${eta(p.km)} min</i></button><b class="pn">${esc(p.n)}</b><select class="wsel" data-id="${p.id}" aria-label="Weight for ${esc(p.n)}">${[200,500,1000].map(g=>`<option value="${g}" ${g===w?'selected':''}>${wl(g)}</option>`).join('')}</select><div class="pb"><div><b>${inr(price(p,w))}</b><br><small>${inr(p.pk)}/kg · ${p.km.toFixed(1)} km</small></div>${p.st<.2?'<small>Sold out</small>':n?`<div class="stp"><button data-a="dec" data-k="${k}" aria-label="Remove one">−</button><b>${n}</b><button data-a="inc" data-k="${k}" aria-label="Add one">+</button></div>`:`<button class="add" data-a="inc" data-k="${k}">ADD</button>`}</div></div>`};
+function drawGrid(){const g=$('#pg');if(!g)return;const l=nearby().filter(p=>(cat==='All'||p.c===cat)&&p.n.toLowerCase().includes(q.toLowerCase()));g.innerHTML=l.length?l.map(card).join(''):'<p class="note" style="grid-column:1/-1">Nothing matches here yet. Farmers within '+RADIUS+' km can list produce from their dashboard.</p>'}
+const P={},A={};
+P.home=()=>{const u=uloc(),s=sess();if(!u)return `<div class="card gate"><div style="font-size:3rem">📍</div><h1>See produce near you</h1><p>Share your location and we will show fresh fruits and vegetables available within ${RADIUS} km.</p><button class="btn" data-a="gloc">Use my current location</button><p class="note" id="gs">Your browser will ask for permission.</p>${s&&defA()?'<p class="note">Your saved address has no map position yet. Pick your city below to see nearby produce.</p>':''}<p><b>Cannot share GPS? Choose your city</b></p><div class="row" style="justify-content:center"><select id="gc" aria-label="City">${CITIES.map(c=>`<option>${c[0]}</option>`).join('')}</select><button class="btn alt" data-a="gcity">Use this city</button></div><p>${s?'<a href="#location">Manage addresses</a>':'<a href="#login">Log in to save addresses</a>'}</p></div>`;
+const n=nearby().length;return `<input class="search" id="sq" type="search" placeholder="Search for tomato, banana, spinach" value="${esc(q)}" aria-label="Search produce" maxlength="40"><div class="cats">${[['All','🛒'],['Vegetables','🥕'],['Fruits','🍎'],['Leafy & herbs','🥬']].map(([c,e])=>`<button data-a="cat" data-c="${c}" class="${c===cat?'on':''}"><span>${e}</span>${c==='Leafy & herbs'?'Leafy':c}</button>`).join('')}</div><h2 style="margin-top:0">Fresh near you</h2><p class="note">${n} item${n===1?'':'s'} within ${RADIUS} km</p><div class="grid" id="pg"></div>`};
+A.home=()=>{drawGrid();const e=$('#sq');e&&e.addEventListener('input',x=>{q=x.target.value.slice(0,40);drawGrid()})};
+P.trace=()=>{const p=gp(ls.get('tp','s1'))||SD[0],b=bt(p),w=sel[p.id]||500,k=p.id+'|'+w,n=cart[k]||0,km=pkm(p,uloc()),d=t=>t<Date.now()?' d':'',L=p.c==='Leafy & herbs',F=p.c==='Fruits',tip=L?'Wrap in a damp cloth and keep in the fridge. Use within 2 days.':F?'Keep at room temperature until ripe, then move to the fridge.':'Keep in a cool, dry place. Wash just before cooking.';
+return `<a class="np" href="#home">← Back to shop</a><div class="hero" style="margin-top:.5rem">${vis(p)}</div>
+<div class="card" style="margin-top:.7rem"><span class="eta">⚡ ${eta(km==null?3:km)} min</span> <span class="badge">${fresh(b)}% fresh</span><h1 style="margin-top:.4rem">${esc(p.n)}</h1><p class="note">Grown by ${esc(p.farmer)}, ${esc(p.farm)}</p><div class="wchips">${[200,500,1000].map(g=>`<button data-a="w" data-id="${p.id}" data-g="${g}" class="${g===w?'on':''}"><b>${wl(g)}</b>${inr(price(p,g))}</button>`).join('')}</div><p class="note" style="margin:0">${inr(p.pk)} per kg · all taxes included</p></div>
+<div class="card"><h2 style="margin-top:0">Product details</h2><table><tr><th>Type</th><td>${esc(p.c)}</td></tr><tr><th>Farm</th><td>${esc(p.farm)}, ${esc(p.dist)}</td></tr><tr><th>Picked on</th><td>${fmt(b.harvest)}</td></tr><tr><th>Best before</th><td>${new Date(b.best).toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</td></tr><tr><th>Stock left</th><td>${p.st} kg</td></tr></table></div>
+<div class="card tips"><b>💡 How to store</b><p style="margin:.3rem 0 0">${tip}</p></div>
+<div class="card"><h2 style="margin-top:0">From farm to your home</h2><div class="tl"><div class="st d"><small>${fmt(b.harvest)}</small><h3>Picked at the farm</h3><p>${esc(b.farmer)}, ${esc(b.farm)}</p></div>${b.sd?`<div class="st${d(b.mandi)}"><small>${fmt(b.mandi)}</small><h3>Checked at ${esc(b.dist)} market</h3></div><div class="st${d(b.retail)}"><small>${fmt(b.retail)}</small><h3>Kept cool at ${b.temp} °C</h3></div>`:''}</div></div>
+<div class="card"><h2 style="margin-top:0">Quality check</h2>${b.sd?`<table><tr><th>Pesticide check</th><td class="pass">Passed (sample data)</td></tr><tr><th>Firmness</th><td>${b.firm.toFixed(1)}%</td></tr><tr><th>Checked by</th><td>${esc(b.lab)}</td></tr></table>`:'<p class="note">Listed by the farmer. No lab report yet.</p>'}<div class="hash" id="fp">…</div></div>
+<div class="pbar np"><div><b style="font-size:1.2rem">${inr(price(p,w))}</b><br><small class="note">${wl(w)}</small></div>${p.st<.2?'<b>Sold out</b>':n?`<div class="stp"><button data-a="dec" data-k="${k}" aria-label="Remove one">−</button><b>${n}</b><button data-a="inc" data-k="${k}" aria-label="Add one">+</button></div>`:`<button class="btn" data-a="inc" data-k="${k}">Add to cart</button>`}</div>`};
+A.trace=async()=>{const h=await sha(JSON.stringify(bt(gp(ls.get('tp','s1'))||SD[0])));$('#fp').textContent='Fingerprint '+h.slice(0,16)+'…'+h.slice(-8)};
+const LB={buyer:['Home','Work','Other'],farmer:['Farm','Other place'],delivery:['My base','Other place']};
+P.location=()=>{const s=sess(),a=ab();return `<div class="card"><h1>Addresses</h1><p class="note">${s.role==='buyer'?'Where we deliver your orders.':s.role==='farmer'?'Where riders collect your produce.':'Your base or standby points.'} Everything is saved on this device.</p>
+<label for="lb">Type</label><select id="lb">${LB[s.role].map(x=>`<option>${x}</option>`).join('')}</select><label for="ad">Address</label><input id="ad" style="width:100%" maxlength="120" placeholder="House or plot, street, area, landmark"><label for="ct">City (used when GPS is not available)</label><select id="ct"><option value="">Choose your city</option>${CITIES.map(c=>`<option>${c[0]}</option>`).join('')}</select><div class="row" style="margin-top:.6rem"><button class="btn alt" data-a="gps">Use my current location</button><button class="btn" data-a="saveloc">Save address</button></div><p class="note" id="gs">GPS powers live tracking and the route plot. Your browser will ask permission.</p></div>
+${a.map(x=>`<div class="card"><div class="line"><b>${esc(x.label)}</b>${x.d?'<span class="badge">Default</span>':''}</div><p>${esc(x.text)}<br><small class="note">${hasC(x)?(x.ap?'Approximate (city centre)':'GPS saved · '+pt(x)):'No map position yet'}</small></p>${hasC(x)?'':`<div class="row" style="margin-bottom:.5rem"><select id="cs${x.id}" aria-label="City">${CITIES.map(c=>`<option>${c[0]}</option>`).join('')}</select><button class="btn sm" data-a="acity" data-id="${x.id}">Set city</button></div>`}<div class="row">${x.d?'':`<button class="btn alt sm" data-a="adef" data-id="${x.id}">Make default</button>`}<button class="btn alt sm red" data-a="adel" data-id="${x.id}">Delete</button></div></div>`).join('')||'<p class="note">No saved addresses yet.</p>'}`};
+P.cart=()=>{const ks=Object.keys(cart).filter(k=>gp(parts(k)[0])),s=sub(),f=s>=199||!s?0:25,a=ab();if(!ks.length)return '<div class="card"><h1>Your cart is empty</h1><a class="btn" href="#home">Browse produce</a></div>';
+return `<h1>Your cart</h1><div class="card">${ks.map(k=>{const [i,g]=parts(k),p=gp(i);return `<div class="line"><span>${p.e||'🌱'} ${esc(p.n)}<br><small class="note">${wl(+g)} · ${inr(p.pk)}/kg</small></span><div class="stp"><button data-a="dec" data-k="${k}" aria-label="Remove one">−</button><b>${cart[k]}</b><button data-a="inc" data-k="${k}" aria-label="Add one">+</button></div><b>${inr(price(p,+g)*cart[k])}</b></div>`}).join('')}<div class="line"><span>Items</span><span>${inr(s)}</span></div><div class="line"><span>Delivery</span><span>${f?inr(f):'Free'}</span></div><div class="line"><b>Total</b><b>${inr(s+f)}</b></div></div>
+<div class="card"><label for="as">Delivery address</label>${a.length?`<select id="as">${a.map(x=>`<option value="${x.id}" ${x.d?'selected':''}>${esc(x.label)}: ${esc(x.text)}</option>`).join('')}</select>`:'<p>No saved address.</p>'} <a href="#location">Add or change</a><p class="note">Pay cash or UPI on delivery. Items from different farms are sent as separate orders.</p><button class="btn" data-a="order">Place order</button><div class="err" id="le" role="alert"></div></div>`};
+const itl=o=>o.it.map(i=>`${esc(i.n)} ${i.g?wl(i.g)+' ':''}× ${i.q}`).join(', ');
+P.orders=async()=>{const s=sess(),{ok,bad}=await loadO(),m=ok.filter(o=>o.ph===s.phone).reverse();return `<h1>My orders</h1>${bad?`<div class="card"><b class="bad">${bad} order record${bad>1?'s were':' was'} changed outside the app and removed.</b></div>`:''}${m.map(o=>`<div class="card"><div class="line"><b>${esc(o.id)}</b><span class="badge">${SL[o.s]}</span></div><p>${itl(o)} · ${inr(o.tot)}</p><button class="btn sm" data-a="track" data-id="${o.id}">Track order</button></div>`).join('')||'<div class="card"><p>No orders yet.</p><a class="btn" href="#home">Start shopping</a></div>'}`};
+const prog=[0,0,.05,.5,1];
+function rider(o){const i=ST.indexOf(o.s);if(i<2)return null;if(o.rl&&Date.now()-o.rl.t<12e4&&o.s!=='delivered')return{...o.rl,live:true};if(!hasC(o.pk)||!hasC(o.dr))return null;const g=prog[i];return{lat:o.pk.lat+(o.dr.lat-o.pk.lat)*g,lng:o.pk.lng+(o.dr.lng-o.pk.lng)*g}}
+P.track=async()=>{const {ok}=await loadO(),o=ok.find(x=>x.id===trk);if(!o)return '<div class="card"><p>Order not found.</p><a class="btn" href="#orders">My orders</a></div>';const r=rider(o),rem=r&&hasC(o.dr)?dist(r.lat,r.lng,o.dr.lat,o.dr.lng):o.km,e=Math.round(5+rem*3.5);
+return `<h1>Order ${esc(o.id)}</h1><div class="card"><span class="badge">${SL[o.s]}</span> <b>${o.s==='delivered'?'Delivered':'About '+e+' min away'}</b>
+${mapSVG([o.pk,o.dr,r])}<div class="row">${ml(r||o.pk,o.dr)}</div>
+<div class="line"><span>🛵 Delivery partner</span><b>${o.rn?esc(o.rn):'Not assigned yet'}${r&&r.live?' · live GPS':''}</b></div><div class="line"><span>🌾 Pickup</span><span>${esc(o.pk.text)}</span></div><div class="line"><span>🏠 Drop for ${esc(o.bn)}</span><span>${esc(o.dr.text)}</span></div>
+<div class="tl">${ST.map((s,k)=>`<div class="st${k<=ST.indexOf(o.s)?' d':''}"><b>${SL[s]}</b>${o.tm[s]?`<br><small>${fmt(o.tm[s])}</small>`:''}</div>`).join('')}</div>${o.s!=='delivered'?'<button class="btn alt np" data-a="sim">Simulate delivery (demo)</button>':''}</div><a class="btn alt" href="#orders">All orders</a>`};
+const O={step:1,role:'buyer',phone:'',name:''};
+P.login=()=>{if(sess())return '<div class="card"><h2>You are logged in</h2><a class="btn" href="#account">Open dashboard</a></div>';const R={buyer:['🛒','Buyer'],farmer:['🌾','Farmer'],delivery:['🛵','Delivery']};
+return O.step===2?`<div class="card"><h1>Enter the code</h1><p>Sent to +91 ${O.phone.slice(0,2)}••••••${O.phone.slice(-2)}. Valid for 5 minutes.</p><div class="demo"><b>Demo mode:</b> no SMS service is connected, so your code is <b>${O.code}</b></div><div class="otp" id="ot">${[0,1,2,3,4,5].map(i=>`<input inputmode="numeric" maxlength="1" aria-label="Digit ${i+1}" autocomplete="one-time-code">`).join('')}</div><div class="err" id="le" role="alert"></div><div class="row"><button class="btn" data-a="verify">Verify and log in</button><button class="btn alt" id="rs" data-a="resend" disabled>Resend in 30s</button><button class="btn alt" data-a="chg">Back</button></div></div>`
+:`<div class="card"><h1>Log in</h1><div class="roles">${Object.entries(R).map(([k,v])=>`<button data-a="role" data-r="${k}" class="${O.role===k?'on':''}" aria-pressed="${O.role===k}"><span>${v[0]}</span>${v[1]}</button>`).join('')}</div><label for="nm">Your name</label><input id="nm" maxlength="40" autocomplete="name" placeholder="Full name" value="${esc(O.name)}" style="width:100%"><label for="ph">Mobile number</label><div class="row"><span>+91</span><input id="ph" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="9876543210" value="${O.phone}" style="flex:1"></div><p><button class="btn" data-a="send">Send OTP</button></p><div class="err" id="le" role="alert"></div></div>`};
+A.login=()=>{const ot=$('#ot');if(!ot){const p=$('#ph');p&&p.addEventListener('keydown',e=>{if(e.key==='Enter')act('send')});return}
+const ins=[...ot.children];ins[0].focus();ins.forEach((el,i)=>{el.addEventListener('input',()=>{el.value=el.value.replace(/\D/g,'');if(el.value&&ins[i+1])ins[i+1].focus();if(ins.every(x=>x.value))act('verify')});el.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!el.value&&ins[i-1])ins[i-1].focus()});el.addEventListener('paste',e=>{const t=(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6);if(!t)return;e.preventDefault();t.split('').forEach((c,j)=>ins[j].value=c);(ins[t.length]||ins[5]).focus()})});
+const tick=()=>{const s=Math.max(0,30-Math.floor((Date.now()-O.sent)/1000)),r=$('#rs');if(!r)return clearInterval(tm);r.disabled=s>0;r.textContent=s>0?'Resend in '+s+'s':'Resend code'};tick();tm=setInterval(tick,1000)};
+async function gen(){const sd=ls.get('sends',[]).filter(t=>Date.now()-t<36e5);if(sd.length>=5)return 'Too many codes requested. Try again in an hour.';sd.push(Date.now());ls.set('sends',sd);const c=String(100000+crypto.getRandomValues(new Uint32Array(1))[0]%900000);O.code=c;O.salt=String(crypto.getRandomValues(new Uint32Array(1))[0]);O.hash=await sha(c+O.salt);O.exp=Date.now()+3e5;O.tries=0;O.sent=Date.now()}
+const pv=s=>`+91 ${s.phone.slice(0,2)}••••••${s.phone.slice(-2)}`;
+P.account=async()=>{const s=sess(),pf=prof(),{ok}=await loadO(),h='<a class="btn alt sm" href="#security">Security</a> <button class="btn alt sm" data-a="logout">Log out</button>';
+const head=`<h1>${{buyer:'My account',farmer:'Farmer dashboard',delivery:'Delivery dashboard'}[s.role]}</h1><div class="card"><p>${pv(s)}</p><label for="pn">Display name</label><div class="row"><input id="pn" maxlength="40" value="${esc(s.name)}" style="flex:1"><button class="btn sm" data-a="sname">Save</button></div>${s.role==='farmer'?`<label for="pf">Farm name</label><input id="pf" maxlength="50" value="${esc(pf.farm||'')}" style="width:100%"><label for="pd">District</label><input id="pd" maxlength="40" value="${esc(pf.dist||'')}" style="width:100%"><p><button class="btn sm" data-a="sfarm">Save farm details</button></p>`:''}<p>${h}</p></div>`;
+if(s.role==='buyer')return head+`<div class="card"><p>${ok.filter(o=>o.ph===s.phone).length} orders · <a href="#location">${ab().length} saved addresses</a></p></div>`;
+if(s.role==='farmer'){const mine=cp().filter(p=>p.o===s.phone),inc=ok.filter(o=>o.it.some(i=>i.o===s.phone)&&o.s!=='delivered');
+return head+`<h2>Orders for my produce (${inc.length})</h2>${inc.map(o=>`<div class="card"><div class="line"><b>${esc(o.id)} · ${esc(o.bn)}</b><span class="badge">${SL[o.s]}</span></div><p>${itl(o)}<br><small class="note">Rider: ${o.rn?esc(o.rn):'not assigned'}</small></p>${o.s==='placed'?`<button class="btn sm" data-a="adv" data-id="${o.id}" data-s="packed">Packed, ready for pickup</button>`:''}</div>`).join('')||'<p class="note">No orders waiting.</p>'}
+<h2>Add produce to sell</h2><div class="card"><label for="n1">Name</label><input id="n1" maxlength="30" style="width:100%" placeholder="e.g. Red tomatoes"><label for="n2">Category</label><select id="n2"><option>Vegetables</option><option>Fruits</option><option>Leafy &amp; herbs</option></select><div class="row"><div><label for="n3">Price per kg (₹)</label><input id="n3" type="number" min="1" max="9999" style="width:7rem"></div><div><label for="n4">Stock (kg)</label><input id="n4" type="number" min="1" max="999" step="0.5" style="width:7rem"></div></div><label for="n5">Photo of your produce (required, kept as uploaded, up to 1.5 MB)</label><input id="n5" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><div id="npv"></div><p><button class="btn" data-a="addp">Add to shop</button></p><div class="err" id="le" role="alert"></div></div>
+<h2>My listings (${mine.length})</h2>${mine.map(p=>`<div class="card"><div class="row">${okImg(p.img)?`<img class="thumb" src="${p.img}" alt="${esc(p.n)}">`:'<span style="font-size:2rem">🌱</span>'}<b style="flex:1">${esc(p.n)}</b><button class="btn alt sm red" data-a="delp" data-id="${p.id}">Delete</button></div><div class="row"><label>₹/kg <input id="pp${p.id}" type="number" min="1" max="9999" value="${p.pk}" style="width:5.5rem"></label><label>Stock kg <input id="ps${p.id}" type="number" min="0" max="999" step="0.5" value="${p.st}" style="width:5.5rem"></label><button class="btn sm" data-a="psave" data-id="${p.id}">Save</button></div></div>`).join('')||'<p class="note">You have not listed anything yet.</p>'}`}
+const me=ok.filter(o=>o.rd===s.phone&&o.s!=='delivered'),av=ok.filter(o=>(o.s==='placed'||o.s==='packed')&&!o.rd);
+return head+`<div class="card"><b>Live location</b><p class="note">Share your GPS so buyers can see you on the map during active deliveries.</p><button class="btn ${wid!==null?'red':''}" data-a="live">${wid!==null?'Stop sharing':'Share live location'}</button></div><h2>New delivery requests (${av.length})</h2>${av.map(o=>`<div class="card"><div class="line"><b>${esc(o.id)}</b><span>${inr(Math.round(30+6*o.km))} earning</span></div><p>🌾 ${esc(o.pk.text)}<br>🏠 ${esc(o.dr.text)} (${esc(o.bn)})<br><small class="note">${o.km.toFixed(1)} km · ${o.s==='placed'?'Farmer is still packing':'Ready to pick up'}</small></p><div class="row"><button class="btn sm" data-a="adv" data-id="${o.id}" data-s="picked">Accept order</button>${ml(o.pk,o.dr)}</div></div>`).join('')||'<p class="note">No new requests right now.</p>'}<h2>My active deliveries</h2>${me.map(o=>`<div class="card"><div class="line"><b>${esc(o.id)}</b><span class="badge">${SL[o.s]}</span></div><p>🏠 ${esc(o.dr.text)} (${esc(o.bn)})</p><div class="row">${o.s==='picked'?`<button class="btn sm" data-a="adv" data-id="${o.id}" data-s="way">Start trip</button>`:`<button class="btn sm" data-a="adv" data-id="${o.id}" data-s="delivered">Delivered</button>`}<button class="btn alt sm" data-a="chat" data-id="${o.id}">💬 Chat</button>${ml(o.pk,o.dr)}</div></div>`).join('')||'<p class="note">No trips right now.</p>'}`};
+P.security=()=>{const ok=['Session lives only in this tab and expires after 30 minutes idle','OTP stored only as a salted SHA-256 hash, valid 5 minutes, 3 tries, then a 5 minute lock','Maximum 5 OTP requests per hour','Role checks keep buyers, farmers and riders on their own screens','All typed text is escaped; photos must be real image files under 1.5 MB','Orders are hash-chained, so edited records are detected and removed','Strict content security policy blocks outside scripts and network calls'],todo=['OTP sent and checked by a server through an SMS provider','Accounts, orders, photos and roles in a database with access rules','HTTPS only, rate limiting and bot protection','Server-side price, stock and image checks','Secrets in environment variables, audit logs and backups','Live rider GPS shared through the server, not this browser'];
+return `<h1>Security</h1><div class="card"><h2 style="margin-top:0">Built into this demo</h2>${ok.map(x=>`<div class="line"><span class="pass">✓</span><span style="flex:1">${x}</span></div>`).join('')}</div><div class="card"><h2 style="margin-top:0">Needs a real backend before launch</h2><p class="note">This page runs in your browser, where anyone can read and edit code and storage. These checks slow down casual tampering but cannot stop a determined attacker.</p>${todo.map(x=>`<div class="line"><span>○</span><span style="flex:1">${x}</span></div>`).join('')}</div>`};
+async function adv(id,st){const {ok}=await loadO(),o=ok.find(x=>x.id===id),s=sess();if(!o)return;o.s=st;o.tm[st]=Date.now();if(st==='picked'){o.rd=s.phone;o.rn=s.name;o.tm.packed=o.tm.packed||Date.now()}await saveO(ok)}
+function live(){if(wid!==null){navigator.geolocation.clearWatch(wid);wid=null;toast('Live location off');return route(1)}if(!navigator.geolocation){toast('Location is not supported in this view. Open the page in its own tab.');return}let last=0;wid=navigator.geolocation.watchPosition(async p=>{if(Date.now()-last<5000)return;last=Date.now();const s=sess();if(!s)return;const {ok}=await loadO();let ch=0;ok.forEach(o=>{if(o.rd===s.phone&&(o.s==='picked'||o.s==='way')){o.rl={lat:+p.coords.latitude.toFixed(6),lng:+p.coords.longitude.toFixed(6),t:Date.now()};ch=1}});if(ch)await saveO(ok)},()=>{toast('Location permission was denied. Allow it in your browser settings.');wid=null;route(1)},{enableHighAccuracy:true,maximumAge:3000});toast('Sharing live location');route(1)}
+function dec(id,kg){const p=gp(id);if(p.id[0]==='s'){const o=ovr();o[id]={st:Math.max(0,+(p.st-kg).toFixed(2))};ls.set('ovr',o)}else{const a=cp(),x=a.find(y=>y.id===id);x.st=Math.max(0,+(x.st-kg).toFixed(2));ls.set('cp',a)}}
+let cid='';
+const TIPS={buyer:['Keep your phone on so the rider can call or chat','Add a landmark to your address','Check the items at the door before you pay','Leafy veg stays fresh in the fridge, wrapped in a damp cloth'],farmer:['Take photos in daylight of your own produce','Keep stock updated so buyers never get empty orders','Pack in clean crates and keep leafy items cool','Tap Packed as soon as the box is ready'],delivery:['Check the pickup address before you leave','Keep produce out of the sun, not under heavy bags','Share live location so the buyer can follow you','Use chat if you will be late','Be polite and take cash or UPI at the door']};
+const tips=r=>`<div class="card tips"><b>💡 Tips</b><ul>${TIPS[r].map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+const QB=['Please call me','Leave at the door','I am coming down','Which gate?'],QD=['I have picked up your order','I am on my way','Reached your place','Please share the landmark'];
+const msgs=id=>ls.get('chat',{})[id]||[];
+function csend(t){t=(t||'').trim().slice(0,200);const s=sess();if(!t||!s)return;const c=ls.get('chat',{});(c[cid]=c[cid]||[]).push({r:s.role,nm:s.name,x:t,t:Date.now()});c[cid]=c[cid].slice(-100);ls.set('chat',c);drawChat()}
+function drawChat(){const m=$('#cm'),s=sess();if(!m||!s)return;const l=msgs(cid);m.innerHTML=l.map(x=>`<div class="b${x.r===s.role?' me':''}"><small>${esc(x.nm)} · ${new Date(x.t).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'})}</small>${esc(x.x)}</div>`).join('')||'<p class="note">No messages yet. Say hello.</p>';m.scrollTop=m.scrollHeight}
+P.chat=async()=>{const {ok}=await loadO(),s=sess(),o=ok.find(x=>x.id===cid);if(!o||!(o.ph===s.phone||o.rd===s.phone))return '<div class="card"><p>Chat not found.</p><a class="btn" href="#orders">Back</a></div>';const b=s.role==='buyer';
+return `<a href="${b?'#track':'#account'}" class="np" data-a="${b?'track':''}" data-id="${esc(o.id)}">← Back</a><h1 style="margin-top:.4rem">Chat with ${esc(b?(o.rn||'delivery partner'):o.bn)}</h1><p class="note">Order ${esc(o.id)} · ${SL[o.s]}</p><div class="cm" id="cm"></div><div class="qr">${(b?QB:QD).map(t=>`<button data-a="cq" data-t="${esc(t)}">${esc(t)}</button>`).join('')}</div><div class="row"><input id="ci" maxlength="200" placeholder="Type a message" style="flex:1"><button class="btn" data-a="csend">Send</button></div><p class="note">Never share your OTP or bank details in chat.</p>`};
+A.chat=()=>{drawChat();const i=$('#ci');i&&i.addEventListener('keydown',e=>{if(e.key==='Enter')act('csend')});pl=setInterval(drawChat,2500)};
+const _pa=P.account;P.account=async()=>{const h=await _pa(),s=sess();return h+tips(s.role)};
+const _pc=P.cart;P.cart=()=>{const h=_pc();return h+(Object.keys(cart).length?tips('buyer'):'')};
+const _pt=P.track;P.track=async()=>{const h=await _pt(),{ok}=await loadO(),o=ok.find(x=>x.id===trk);if(!o)return h;return h+`<div class="card"><b>💬 Chat with your delivery partner</b>${o.rd?`<p class="note">${esc(o.rn)} has your order. Ask anything.</p><button class="btn" data-a="chat" data-id="${esc(o.id)}">Open chat</button>`:'<p class="note">Chat opens when a delivery partner accepts your order.</p>'}</div>`+tips('buyer')};
+async function act(a,el){const s=sess();
+if(a==='inc')setQ(el.dataset.k,(cart[el.dataset.k]||0)+1);
+if(a==='dec')setQ(el.dataset.k,(cart[el.dataset.k]||0)-1);
+if(a==='w'){sel[el.dataset.id]=+el.dataset.g;drawGrid();if(cur==='trace')route(1)}
+if(a==='cat'){cat=el.dataset.c;route(1)}
+if(a==='trace'){ls.set('tp',el.dataset.id);location.hash='#trace'}
+if(a==='gcity'){const c=CITIES.find(x=>x[0]===$('#gc').value);if(!c)return;ls.set('gloc',{lat:c[1],lng:c[2],text:c[0]+' (approximate)'});toast('Showing produce near '+c[0]);route(1)}
+if(a==='acity'){const c=CITIES.find(x=>x[0]===$('#cs'+el.dataset.id).value);if(!c)return;setAb(ab().map(x=>x.id===el.dataset.id?{...x,lat:c[1],lng:c[2],ap:true}:x));toast('City added to this address');route(1)}
+if(a==='gloc'){const e=$('#gs');if(!navigator.geolocation){toast('Location is not supported in this view. Open the page in its own tab.');return}if(e)e.textContent='Waiting for your permission…';navigator.geolocation.getCurrentPosition(p=>{ls.set('gloc',{lat:+p.coords.latitude.toFixed(6),lng:+p.coords.longitude.toFixed(6),text:'Current location'});toast('Location saved');route(1)},er=>{const m=[0,'Location is blocked in this view. Pick your city below instead, or open the page in its own tab to allow GPS.','Position unavailable. Turn on GPS and try again.','Timed out. Try again.'][er.code]||'Could not get your location.';if(e)e.textContent=m;else toast(m)},{enableHighAccuracy:true,timeout:12000})}
+if(a==='gps'){const e=$('#gs');if(!navigator.geolocation){e.textContent='Location is not supported in this view. Open the page in its own tab, or type the address.';return}e.textContent='Waiting for your permission…';navigator.geolocation.getCurrentPosition(p=>{AD={lat:+p.coords.latitude.toFixed(6),lng:+p.coords.longitude.toFixed(6)};e.textContent='Location captured (accuracy about '+Math.round(p.coords.accuracy)+' m). Type the house or landmark above, then save.'},er=>{e.textContent=[0,'Location is blocked in this view. Choose your city below instead, or open the page in its own tab to allow GPS.','Position unavailable. Move near a window or turn on GPS.','Timed out. Try again.'][er.code]||'Could not get your location.'},{enableHighAccuracy:true,timeout:12000})}
+if(a==='saveloc'){const t=$('#ad').value.trim().slice(0,120);if(t.length<5){toast('Enter at least 5 characters for the address');return}const c=!AD&&CITIES.find(x=>x[0]===$('#ct').value);if(!AD&&!c){toast('Share GPS or choose your city so nearby produce can be shown');return}const l=ab();l.push({id:'a'+crypto.getRandomValues(new Uint32Array(1))[0].toString(16),label:$('#lb').value,text:t,lat:AD?AD.lat:c[1],lng:AD?AD.lng:c[2],ap:!AD,d:!l.length});AD=null;setAb(l);toast('Address saved');route(1)}
+if(a==='adef'){setAb(ab().map(x=>({...x,d:x.id===el.dataset.id})));route(1)}
+if(a==='adel'){let l=ab().filter(x=>x.id!==el.dataset.id);if(l.length&&!l.some(x=>x.d))l[0].d=true;setAb(l);route(1)}
+if(a==='order'){const e=$('#le');if(!s||s.role!=='buyer'){ret='cart';location.hash='#login';toast('Log in as a buyer to order');return}const sl=$('#as'),dr=sl&&ab().find(x=>x.id===sl.value);if(!dr){e.textContent='Add a drop address first.';return}
+const g={};for(const k of Object.keys(cart)){const [id,w]=parts(k),p=gp(id);if(!p)continue;const q=Math.min(cart[k],Math.floor(p.st*1000/w));if(q>0)(g[p.o]=g[p.o]||[]).push({id,n:p.n,g:+w,q,pr:price(p,+w)*q,o:p.o})}
+const ks=Object.keys(g);if(!ks.length){e.textContent='Items in your cart are out of stock.';return}const {ok}=await loadO();let first=1,sb0=Object.values(g).flat().reduce((t,i)=>t+i.pr,0),made=[];
+for(const ow of ks){const it=g[ow];let pk;if(ow){const fa=defA(ow+':farmer'),pf=ls.get('prof',{})[ow+':farmer']||{};pk=fa?{text:(pf.farm?pf.farm+', ':'')+fa.text,lat:fa.lat,lng:fa.lng}:{text:'Farm pickup (address not set)',lat:null,lng:null}}else{const n=near(dr);pk={text:n.h+' farm hub',lat:n.lat,lng:n.lng}}
+const km=kmOf(pk,dr);if(km>RADIUS){e.textContent='Your drop point is '+Math.round(km)+' km from the pickup point. We deliver within '+RADIUS+' km.';return}
+const sb=it.reduce((t,i)=>t+i.pr,0),id='ORD'+String(100000+crypto.getRandomValues(new Uint32Array(1))[0]%900000);
+ok.push({id,ph:s.phone,bn:s.name,it,tot:sb+(first&&sb0<199?25:0),dr:{text:dr.text,lat:dr.lat,lng:dr.lng},pk,km,s:ow?'placed':'packed',tm:{placed:Date.now(),...(ow?{}:{packed:Date.now()})},rd:'',rn:'',rl:null});first=0;made.push(id);it.forEach(i=>dec(i.id,i.g*i.q/1000))}
+await saveO(ok);cart={};ls.set('cart',cart);toast(made.length>1?made.length+' orders placed':'Order placed');trk=made[0];location.hash=made.length>1?'#orders':'#track'}
+if(a==='track'){trk=el.dataset.id;location.hash='#track'}
+if(a==='sim'){const t=setInterval(async()=>{const {ok}=await loadO(),o=ok.find(x=>x.id===trk);if(!o||o.s==='delivered'){clearInterval(t);return}const nx=ST[ST.indexOf(o.s)+1];o.s=nx;o.tm[nx]=Date.now();if(!o.rd){o.rd='demo';o.rn='Demo rider'}await saveO(ok);if(cur==='track')route(1)},4000)}
+if(a==='adv'){await adv(el.dataset.id,el.dataset.s);toast('Updated');route(1)}
+if(a==='live')live();
+if(a==='sname'){const v=$('#pn').value.trim();if(!/^[\p{L}][\p{L} .'’-]{1,39}$/u.test(v)){toast('Enter a valid name (2 to 40 letters)');return}const x=sess();x.name=v;ss.set('sess',x);setProf({name:v});toast('Name saved');route(1)}
+if(a==='sfarm'){const f=$('#pf').value.trim().slice(0,50),d=$('#pd').value.trim().slice(0,40);if(f.length<2||d.length<2){toast('Enter your farm name and district');return}setProf({farm:f,dist:d});toast('Farm details saved')}
+if(a==='addp'){const e=$('#le'),pf=prof(),n=$('#n1').value.trim().slice(0,30),pk=+$('#n3').value,st=+$('#n4').value;if(!pf.farm||!pf.dist){e.textContent='Save your farm name and district first.';return}const pa=defA();if(!hasC(pa)){e.textContent='Save a pickup address with GPS in Addresses first, so nearby buyers can see your produce.';return}if(!NP.img){e.textContent='Add a real photo of your produce.';return}if(n.length<2||!(pk>=1&&pk<=9999)||!(st>=.5&&st<=999)){e.textContent='Enter a name, a price per kg (1 to 9999) and stock in kg (0.5 to 999).';return}
+const l=cp();l.push({id:'c'+crypto.getRandomValues(new Uint32Array(1))[0].toString(16),n,c:$('#n2').value.replace('&amp;','&'),pk:Math.round(pk),st,img:NP.img,e:'',farmer:s.name,farm:pf.farm,dist:pf.dist,o:s.phone,t:Date.now()});if(!ls.set('cp',l)){e.textContent='Browser storage is full. Use a smaller photo or delete an old listing.';return}NP={img:''};toast('Listing published');route(1)}
+if(a==='psave'){const id=el.dataset.id,pr=Math.round(+$('#pp'+id).value),st=+$('#ps'+id).value;if(!(pr>=1&&pr<=9999&&st>=0&&st<=999)){toast('Price 1 to 9999 per kg, stock 0 to 999 kg');return}const l=cp(),x=l.find(y=>y.id===id&&y.o===s.phone);if(x){x.pk=pr;x.st=st;ls.set('cp',l);toast('Saved')}}
+if(a==='delp'){ls.set('cp',cp().filter(y=>!(y.id===el.dataset.id&&y.o===s.phone)));route(1)}
+if(a==='role'){O.role=el.dataset.r;O.phone=($('#ph')||{}).value||O.phone;O.name=($('#nm')||{}).value||O.name;route(1)}
+if(a==='send'){const n=$('#nm').value.trim(),p=$('#ph').value.trim(),e=$('#le');if(!/^[\p{L}][\p{L} .'’-]{1,39}$/u.test(n)){e.textContent='Enter your name (2 to 40 letters).';return}if(!/^[6-9]\d{9}$/.test(p)){e.textContent='Enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.';return}if(Date.now()<ls.get('lock',0)){e.textContent='Too many wrong codes. Try again in '+Math.ceil((ls.get('lock',0)-Date.now())/6e4)+' min.';return}O.name=n;O.phone=p;const er=await gen();if(er){e.textContent=er;return}O.step=2;route(1)}
+if(a==='resend'){const er=await gen();if(er){toast(er);return}toast('New code sent');route(1)}
+if(a==='chg'){O.step=1;route(1)}
+if(a==='verify'){const v=[...$('#ot').children].map(x=>x.value).join(''),e=$('#le');if(v.length<6){e.textContent='Enter all 6 digits.';return}if(Date.now()<ls.get('lock',0)){e.textContent='Locked for a few minutes after wrong codes.';return}if(Date.now()>O.exp){e.textContent='This code has expired. Choose resend.';return}
+if(await sha(v+O.salt)!==O.hash){O.tries++;if(O.tries>=3){ls.set('lock',Date.now()+3e5);O.step=1;O.code='';toast('Locked for 5 minutes');route(1);return}e.textContent='Wrong code. '+(3-O.tries)+' attempt'+(3-O.tries===1?'':'s')+' left.';return}
+ss.set('sess',{role:O.role,phone:O.phone,name:O.name,exp:Date.now()+18e5});setProf({name:O.name});O.step=1;O.code='';O.hash='';toast('Welcome, '+O.name);location.hash=O.role==='buyer'?'#'+ret:'#account';ret='account'}
+if(a==='chat'){cid=el.dataset.id;location.hash='#chat'}if(a==='csend'){const i=$('#ci');if(i){csend(i.value);i.value='';i.focus()}}if(a==='cq')csend(el.dataset.t);
+if(a==='logout'){if(wid!==null){navigator.geolocation.clearWatch(wid);wid=null}ss.del('sess');toast('Logged out');location.hash='#home';route(1)}}
+document.addEventListener('click',e=>{const s=ss.get('sess',null);if(s&&Date.now()<s.exp){s.exp=Date.now()+18e5;ss.set('sess',s)}const el=e.target.closest('[data-a]');if(el)act(el.dataset.a,el)});
+document.addEventListener('change',e=>{if(e.target.classList.contains('wsel')){sel[e.target.dataset.id]=+e.target.value;drawGrid();return}if(e.target.id!=='n5')return;const f=e.target.files[0],v=$('#npv');NP.img='';v.innerHTML='';if(!f)return;if(!/^image\/(png|jpeg|webp|gif)$/.test(f.type)){$('#le').textContent='Choose a PNG, JPG, WebP or GIF photo.';e.target.value='';return}if(f.size>1.5e6){$('#le').textContent='That photo is larger than 1.5 MB. Choose a smaller one.';e.target.value='';return}const r=new FileReader();r.onload=()=>{if(okImg(r.result)){NP.img=r.result;v.innerHTML=`<img class="thumb" src="${r.result}" alt="Photo preview" style="margin-top:.5rem">`;$('#le').textContent=''}else $('#le').textContent='That file is not a valid image.'};r.readAsDataURL(f)});
+const NEED={chat:1,account:1,location:1,orders:'buyer',track:'buyer'};
+async function route(keep){clearInterval(tm);clearInterval(pl);let p=(location.hash||'#home').slice(1);if(!P[p])p='home';const s=sess();
+if(NEED[p]&&(!s||(NEED[p]!==1&&s.role!==NEED[p]))){ret=p;p='login';history.replaceState(null,'','#login')}cur=p;
+try{app.innerHTML=await P[p]();if(A[p])await A[p]()}catch(err){console.error(err);app.innerHTML='<div class="card"><h2>Something went wrong</h2><p class="note">This page could not be shown. Go back and try again.</p><a class="btn" href="#home">Back to shop</a></div>'}if(p==='track'||(p==='account'&&s&&s.role==='delivery'))pl=setInterval(()=>route(1),6000);
+const r=s?s.role:'guest',T=r==='buyer'?[['home','🛒','Shop'],['orders','📦','Orders'],['location','📍','Addresses'],['account','👤','Account']]:r==='guest'?[['home','🛒','Shop'],['login','👤','Log in'],['security','🔒','Security']]:r==='farmer'?[['account','🌾','Dashboard'],['location','📍','Addresses'],['home','🛒','Shop view']]:[['account','🛵','Dashboard'],['location','📍','Addresses'],['security','🔒','Security']];
+$('#tabs').innerHTML=T.map(t=>`<a href="#${t[0]}" class="${t[0]===p||(['trace','cart'].includes(p)&&t[0]==='home')||(p==='track'&&t[0]==='orders')?'on':''}"><span>${t[1]}</span>${t[2]}</a>`).join('');
+const u=uloc(),nb=nearby(),mn=nb.length?Math.min(...nb.map(x=>x.km)):null,lp=$('#lp'),d=s?defA():null;$('#lt').textContent=mn!=null?'⚡ Delivery in '+eta(mn)+' min':'⚡ Fresh produce';$('#la').textContent='📍 '+(d?d.text:u?(u.text||'Current location'):'Set your location');if(s){lp.href='#location';delete lp.dataset.a}else{lp.href='#home';lp.dataset.a='gloc'}bar();if(!keep)window.scrollTo(0,0)}
+addEventListener('hashchange',()=>route());addEventListener('storage',e=>{if(e.key==='orders'||e.key==='cp')route(1)});
+setInterval(()=>{if(ss.get('sess',null)&&!sess()){toast('Session expired. Please log in again.');route()}},3e4);
+$('#th').addEventListener('click',()=>{const d=document.documentElement;d.dataset.theme=getComputedStyle(d).colorScheme==='dark'?'light':'dark';ls.set('theme',d.dataset.theme)});
+const th=ls.get('theme','');if(th)document.documentElement.dataset.theme=th;
+route();
+</script>
 </body>
 </html>
